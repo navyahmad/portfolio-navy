@@ -3,6 +3,7 @@ import pkl from "../assets/images/pkl.webp"
 import duta from "../assets/images/dt.webp"
 import lks from "../assets/images/lks.webp"
 import juara from "../assets/images/web2.webp"
+import fertinnovation from "../assets/images/fertinnovation.webp"
 import sertifAI from "../assets/images/AI.webp"
 import sertifFert from "../assets/images/fert.webp"
 import sertifWeb from "../assets/images/webdev.webp"
@@ -49,7 +50,7 @@ export const EXPERIENCES = [
     id: 2,
     year: "2024",
     title: "GenRe Ambassador for Pasuruan Regency 2024",
-    company: "DP3AP2KB Kabupaten Pasuruan",
+    company: "Dinas P3AP2KB Kabupaten Pasuruan",
     description: "Selected as a Youth Ambassador of Pasuruan Regency, advocating youth empowerment and delivering educational campaigns on responsible life planning and social awareness.",
     tech: ["Public Speaking", "Communication", "Leadership", "Community Engagement"],
     image: duta 
@@ -72,15 +73,15 @@ export const EXPERIENCES = [
     tech: ["Laravel", "Tailwind CSS", "MySQL", "AHP", "Topsis", "Fuzzy Logic"],
     image: juara
   },
-  // {
-  //   id: 5,
-  //   year: "2025",
-  //   title: "Fertinnovation Challenge Finalist",
-  //   company: "PT Pupuk Indonesia (Persero)",
-  //   description: "Advancing an agricultural decision-support web platform with crop suitability and pest prediction features using environmental data, securing a Top 10 finalist position in the Fertinnovation Challenge 2025.",
-  //   tech: ["React JS", "Tailwind CSS", "AHP", "Topsis", "Fuzzy Logic", "Monte Carlo"],
-  //   image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800&auto=format&fit=crop", // Ganti dengan path gambar aslimu
-  // }
+  {
+    id: 5,
+    year: "2025",
+    title: "International Fertinnovation Challenge Finalist",
+    company: "PT Pupuk Indonesia (Persero)",
+    description: "Advancing an agricultural decision-support web platform with crop suitability and pest prediction features using environmental data, securing a Top 10 finalist position in the Fertinnovation Challenge 2025.",
+    tech: ["React JS", "Tailwind CSS", "AHP", "Topsis", "Fuzzy Logic", "Monte Carlo"],
+    image:  fertinnovation
+  }
 ];
 
 export const PROJECTS = [
@@ -250,7 +251,7 @@ export const ACHIEVEMENTS = [
   },
   {
     id: 6,
-    title: "Artficial Intelligence",
+    title: "Artificial Intelligence",
     event: "Dicoding DBS Foundation",
     year: "2025",
     status: "Participant",
@@ -321,7 +322,7 @@ export const ACHIEVEMENTS = [
   {
   id: 12,
   title: "GenRe Youth Ambassador Finalist",
-  event: "DP3AP2KB Kabupaten Pasuruan",
+  event: "Dinas P3AP2KB Kabupaten Pasuruan",
   year: "2024",
   status: "Finalist & Youth Role Model",
   description: "Served as a youth role model and speaker, delivering educational sessions on adolescent development and fatherless awareness in local communities.",
@@ -332,7 +333,7 @@ export const ACHIEVEMENTS = [
   {
   id: 13,
   title: "Pasuruan City Youth Event Certificate",
-  event: "Pasuruan City's Grand GenRe Event",
+  event: "Dinas P3AKB Kota Pasuruan",
   year: "2022",
   status: "Ceremonial Guard Member",
   description: "Served as a ceremonial guard (pedang pora) representing youth discipline and professionalism during the official GenRe city-level event.",
@@ -343,7 +344,7 @@ export const ACHIEVEMENTS = [
   {
   id: 14,
   title: "2nd Runner-Up – National LKBB SUPRAIS Competition",
-  event: "SMKN 10 Surabaya",
+  event: "SMK Negeri 10 Surabaya",
   year: "2024",
   status: "2nd Runner Up",
   description: "Achieved national-level recognition in a marching drill competition, demonstrating discipline, teamwork, and coordinated performance.",
@@ -354,7 +355,7 @@ export const ACHIEVEMENTS = [
   {
   id: 15,
   title: "3rd Place – LKBB Trimatra (Mula Category)",
-  event: "SMKN 6 Malang",
+  event: "SMK Negeri 6 Malang",
   year: "2024",
   status: "3rd Place Winner",
   description: "Achieved 3rd place in the Mula category of a marching drill competition, demonstrating discipline, teamwork, and precise coordination.",
@@ -401,6 +402,6 @@ export const ACHIEVEMENTS = [
 export const ABOUT_DATA = {
   hobbies: ["Eat", "Sleep", "Shower", "Study", "Exercise", "Play Mobile Legends", "Black Coffee"],
   focus: ["Software Engineering", "Artificial Intelligence", "Business"],
-  bio: "Software Engineer and Public Speaker currently pursuing a degree in Informatics Engineering at Politeknik Negeri Jember. Passionate about building scalable web applications while continuously improving communication and leadership skills through public speaking. I believe that strong technology and clear communication are the foundation for creating solutions that truly make an impact.",
+  bio: "Software Engineer and Public Speaker currently pursuing a degree in Informatics Engineering at Jember State Polytechnic. Passionate about building scalable web applications while continuously improving communication and leadership skills through public speaking. I believe that strong technology and clear communication are the foundation for creating solutions that truly make an impact.",
   image: profileImg // Gunakan foto portrait yang tanpa background
 };

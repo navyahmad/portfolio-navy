@@ -8,33 +8,19 @@ import {
   SiMysql, SiGit, SiVite 
 } from "react-icons/si";
 
-const marqueeVariants = {
-  animate: {
-    x: [0, -1000],
-    transition: {
-      x: {
-        repeat: Infinity,
-        repeatType: "loop",
-        duration: 15,
-        ease: "linear",
-      },
-    },
-  },
-};
-
 const About = () => {
   return (
     <section id="about" className="relative py-24 md:py-40 bg-background overflow-hidden text-white">
-      {/* Marquee Background - dioptimalkan dengan will-change-transform agar scroll tidak berat */}
-      <div className="absolute top-1/4 -left-10 w-[200%] overflow-hidden opacity-5 pointer-events-none z-0 rotate-[-2deg] flex will-change-transform">
-        <motion.div variants={marqueeVariants} animate="animate" className="flex w-[200%]">
+      {/* Marquee Background - Pure CSS animation (compositor thread, tidak bebankan JS) */}
+      <div className="absolute top-1/4 -left-10 w-[200%] overflow-hidden opacity-5 pointer-events-none z-0 rotate-[-2deg] flex">
+        <div className="animate-marquee whitespace-nowrap flex items-center shrink-0">
            <span className="text-[12rem] md:text-[20rem] font-black uppercase text-transparent whitespace-nowrap" style={{ WebkitTextStroke: "2px #3b82f6" }}>
-             BUILDING APP IS AN ART • EVERYTHING IS CANVAS • BUILDING APP IS AN ART • EVERYTHING IS CANVAS • 
+             BUILDING APP IS AN ART • EVERYTHING IS CANVAS • BUILDING APP IS AN ART • EVERYTHING IS CANVAS •
            </span>
            <span className="text-[12rem] md:text-[20rem] font-black uppercase text-transparent whitespace-nowrap" style={{ WebkitTextStroke: "2px #3b82f6" }}>
-             BUILDING APP IS AN ART • EVERYTHING IS CANVAS • BUILDING APP IS AN ART • EVERYTHING IS CANVAS • 
+             BUILDING APP IS AN ART • EVERYTHING IS CANVAS • BUILDING APP IS AN ART • EVERYTHING IS CANVAS •
            </span>
-        </motion.div>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

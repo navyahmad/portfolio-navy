@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,7 +9,9 @@ gsap.registerPlugin(ScrollTrigger);
 const Experience = () => {
   const sectionRef = useRef(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  // Gunakan ref bukan state agar mousemove TIDAK trigger React re-render
+  const floatingRef = useRef(null);
+  const rafRef = useRef(null);
 
   useEffect(() => {
     const items = gsap.utils.toArray(".experience-item");
@@ -34,12 +36,25 @@ const Experience = () => {
     });
 
     const handleMouseMove = (e) => {
-      // Kita ambil posisi relatif terhadap viewport
-      setMousePos({ x: e.clientX, y: e.clientY });
+      // Throttle via requestAnimationFrame — max 1x per frame (60fps)
+      // dan langsung update DOM tanpa React re-render sama sekali
+      if (rafRef.current) return;
+      rafRef.current = requestAnimationFrame(() => {
+        if (floatingRef.current) {
+          const x = e.clientX - (window.innerWidth > 768 ? 400 : 100);
+          const y = e.clientY - (window.innerHeight > 768 ? 300 : 200);
+          floatingRef.current.style.left = `${x}px`;
+          floatingRef.current.style.top = `${y}px`;
+        }
+        rafRef.current = null;
+      });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   return (
@@ -93,27 +108,23 @@ const Experience = () => {
                 </div>
               </div>
 
-              {/* FLOATING IMAGE REVEAL - Muncul di area kursor dalam baris ini */}
+              {/* FLOATING IMAGE REVEAL - Posisi di-update langsung via DOM ref (0 React re-renders) */}
               <AnimatePresence>
                 {hoveredIndex === index && (
                   <motion.div
-                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                    animate={{ 
-                      opacity: 1, 
-                      scale: 1, 
-                      y: 0,
-                      x: mousePos.x - (window.innerWidth > 768 ? 400 : 100), // Posisi horizontal mengikuti kursor
-                      top: mousePos.y - (window.innerHeight > 768 ? 300 : 200) // Posisi vertikal mengikuti kursor
-                    }}
-                    exit={{ opacity: 0, scale: 0.8, y: 20 }}
-                    transition={{ type: "spring", stiffness: 250, damping: 25 }}
+                    ref={floatingRef}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    style={{ willChange: "opacity, transform" }}
                     className="fixed pointer-events-none z-50 w-48 h-32 md:w-80 md:h-52 rounded-2xl overflow-hidden border border-accent/40 shadow-[0_0_40px_rgba(59,130,246,0.2)]"
                   >
-                    <img 
-                      src={exp.image} 
-                      loading="lazy"
-                      alt="Preview" 
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    <img
+                      src={exp.image}
+                      loading="eager"
+                      alt="Preview"
+                      className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
                   </motion.div>

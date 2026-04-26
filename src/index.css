@@ -56,3 +56,28 @@ html.lenis {
 .lenis.lenis-stopped {
   overflow: hidden;
 }
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+
+/* Promosikan elemen animasi ke GPU layer tersendiri agar tidak
+   men-trigger repaint pada elemen lain saat scroll/hover */
+img {
+  /* Mencegah sub-pixel rendering yang menyebabkan blur/shimmer */
+  image-rendering: auto;
+  /* Promote ke layer tersendiri */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Khusus untuk gambar yang punya transition grayscale (berat) */
+.group img,
+.group\/item img {
+  will-change: filter, transform;
+}
+
+/* Smooth scrolling yang tidak konflik dengan Lenis */
+@media (prefers-reduced-motion: no-preference) {
+  .experience-item {
+    will-change: opacity, transform, filter;
+  }
+}

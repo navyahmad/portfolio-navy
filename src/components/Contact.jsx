@@ -5,9 +5,9 @@ import Magnetic from "./Magnetic";
 
 const Contact = () => {
   const socials = [
-    { icon: <Github size={20} />, link: "https://github.com/", name: "Github" },
-    { icon: <Instagram size={20} />, link: "https://instagram.com/", name: "Instagram" },
-    { icon: <Linkedin size={20} />, link: "https://linkedin.com/", name: "LinkedIn" },
+    { icon: <Github size={20} />, link: "https://github.com/navyahmad", name: "Github" },
+    { icon: <Instagram size={20} />, link: "https://www.instagram.com/nvyahmd/", name: "Instagram" },
+    { icon: <Linkedin size={20} />, link: "https://www.linkedin.com/in/navy-ahmad-39521a368/", name: "LinkedIn" },
   ];
 
   return (
