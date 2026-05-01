@@ -34,6 +34,7 @@ import projectMandalatani from "../assets/project/mandalatani.webp"
 import projectCirkula from "../assets/project/cirkula.webp"
 import projectKasir from "../assets/project/kasir.webp"
 import projectMedicalKNN from "../assets/project/medicalknn.webp"
+import projectNexa from "../assets/project/nexa.webp"
 
 // src/constants/index.js
 export const EXPERIENCES = [
@@ -90,7 +91,7 @@ export const PROJECTS = [
     title: "CokroTani",
     category: "Competition Project",
     description: "Supply chain management platform for fertilizer distribution in Sidoarjo, enabling transparent allocation, farmer reporting, and data-driven prioritization using geospatial mapping.",
-fullDescription: "A supply chain management system developed to support transparent and efficient fertilizer distribution across districts in Sidoarjo. The platform allows farmer groups to report fertilizer receipt and monitor commodity data through polygon-based geographic visualization. Administrators can manage distribution records and analyze harvest data to determine priority areas for allocation. The system integrates a decision support mechanism using AHP, TOPSIS and Montecarlo methods to ensure objective and data-driven distribution planning.",
+    fullDescription: "A supply chain management system developed to support transparent and efficient fertilizer distribution across districts in Sidoarjo. The platform allows farmer groups to report fertilizer receipt and monitor commodity data through polygon-based geographic visualization. Administrators can manage distribution records and analyze harvest data to determine priority areas for allocation. The system integrates a decision support mechanism using AHP, TOPSIS and Montecarlo methods to ensure objective and data-driven distribution planning.",
     tech: ["Laravel", "PHP", "MySQL", "Tailwind CSS"],
     image: projectCokro, 
     github: "https://github.com/navyahmad/cokro-tani",
@@ -120,6 +121,18 @@ fullDescription: "A supply chain management system developed to support transpar
   },
   {
     id: 4,
+    title: "NexaAI",
+    category: "AI Project",
+    description: "AI-powered platform for resume analysis and interview simulation, providing ATS scoring, feedback, and HR-style question practice.",
+    fullDescription: "NexaAI is an AI-driven platform designed to help job seekers improve their resume quality and interview readiness. The system analyzes uploaded resumes to generate ATS (Applicant Tracking System) scores, highlighting strengths and areas for improvement. It also provides an AI-powered interview simulation that generates HR-style questions and evaluates user responses, offering structured feedback to enhance communication and performance. This project demonstrates the practical implementation of AI in career preparation, combining natural language processing and interactive web technologies.",
+    tech: ["Next JS", "Framer Motion", "Gemini API", "Tailwind CSS"],
+    image: projectNexa,
+    github: "https://github.com/navyahmad/NexaAI",
+    demo: "https://nexa-ai-ten.vercel.app",
+    gridSpan: "md:col-span-1 md:row-span-1",
+  },
+  {
+    id: 5,
     title: "N-Vanture",
     category: "Academic Project",
     description: "Digital cashier system developed to manage outdoor product sales, inventory tracking, and automated receipt generation for daily retail transactions.",
@@ -130,7 +143,7 @@ fullDescription: "A supply chain management system developed to support transpar
     gridSpan: "md:col-span-1 md:row-span-1", // Kotak Kecil
   },
   {
-    id: 5,
+    id: 6,
     title: "AgriWest",
     category: "Competition Project",
     description: "Prototype marketplace platform designed to transform agricultural waste into value-added products, helping reduce environmental pollution and promote sustainable waste utilization.",
@@ -142,7 +155,7 @@ fullDescription: "A supply chain management system developed to support transpar
     gridSpan: "md:col-span-1 md:row-span-1", // Kotak Kecil
   },
   {
-    id: 6,
+    id: 7,
     title: "Cirkula",
     category: "Competition Project",
     description: "Prototype gamification platform designed to encourage community waste collection through reward-based incentives, enabling users to exchange recycling points for financial or social service benefits.",
@@ -154,7 +167,7 @@ fullDescription: "A supply chain management system developed to support transpar
     gridSpan: "md:col-span-1 md:row-span-1", // Kotak Kecil
   },
   {
-    id: 7,
+    id: 8,
     title: "Sirsak",
     category: "Prototype Project",
     description: "Prototype waste collection management platform designed to coordinate waste pickup requests from small businesses and convert recyclable materials into reward points for social benefit payments.",
@@ -166,7 +179,7 @@ fullDescription: "A supply chain management system developed to support transpar
     gridSpan: "md:col-span-1 md:row-span-1", // Kotak Kecil
   },
   {
-    id: 8,
+    id: 9,
     title: "Medical KNN",
     category: "Data Science Project",
     description: "Exploratory machine learning project applying the K-Nearest Neighbors algorithm to analyze medical datasets and classify disease patterns using fundamental data science techniques.",
