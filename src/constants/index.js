@@ -121,7 +121,7 @@ export const PROJECTS = [
   },
   {
     id: 4,
-    title: "NexaAI",
+    title: "Nexa AI",
     category: "AI Project",
     description: "AI-powered platform for resume analysis and interview simulation, providing ATS scoring, feedback, and HR-style question practice.",
     fullDescription: "NexaAI is an AI-driven platform designed to help job seekers improve their resume quality and interview readiness. The system analyzes uploaded resumes to generate ATS (Applicant Tracking System) scores, highlighting strengths and areas for improvement. It also provides an AI-powered interview simulation that generates HR-style questions and evaluates user responses, offering structured feedback to enhance communication and performance. This project demonstrates the practical implementation of AI in career preparation, combining natural language processing and interactive web technologies.",
